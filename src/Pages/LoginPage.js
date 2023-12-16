@@ -1,6 +1,21 @@
 import React from 'react'
+import { useState } from 'react';
+import axios from 'axios';
+
 
 function LoginPage() {
+
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const handleLogin = async () => {
+    try {
+      await axios.post('http://localhost:4000/login', { email, password });
+      console.log('Login successful');
+    } catch (error) {
+      console.error('Error Login user:', error.message);
+    }
+  };
 
    const Pass = function togglePasswordVisibility() {
         var passwordInput = document.getElementById("password");
@@ -21,17 +36,17 @@ function LoginPage() {
         <div className="card-body ">
             <h1 className="text-center">Login</h1>
               <div className="form-floating mb-3">
-                <input type="email" className="form-control floatingInput"  placeholder="name@example.com"/>
+                <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} className="form-control floatingInput"  placeholder="name@example.com"/>
                 <label>Email address</label>
               </div>
               <div className="form-floating">
-                <input type="password" className="form-control floatingInput" id="password" placeholder="Password"/>
+                <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} className="form-control floatingInput" id="password" placeholder="Password"/>
                 <label>Password</label>
               </div>
               <input id="toggleBtn" className="ms-2 mt-3" type="checkbox" onClick={Pass}/>
                 <label>Show Password</label> 
         </div>
-        <input className="btn btn-primary" type="submit" value="Submit"/> 
+        <input onClick={handleLogin} className="btn btn-primary" type="submit" value="Submit"/> 
       </div>
     </>
   )
