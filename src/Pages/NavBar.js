@@ -7,14 +7,17 @@ function NavBar() {
       <div className="container-fluid">
         <div className="position-absolute p-2 top-0 start-3"><a className="navbar-brand" href="/">Random</a></div>
         <div className="collapse position-absolute top-0 end-0 p-2 navbar-collapse" id="navbarSupportedContent">
-          <form className="d-flex" role="search">
+          <form className="d-flex">
           <Link to="/SignUpPage">
             <button className="btn me-2 btn-outline-success" type="button">SignUp</button>
           </Link>
            
             <Link to="/LoginPage">
-               <button className="btn ms-2 btn-outline-success" type="button">Login</button>
-            </Link>  
+               <button className="btn ms-2 me-2 btn-outline-success" type="button">Login</button>
+            </Link> 
+            <Link to="/ChatPage">
+            <button className="btn ms-2 btn-outline-success" type="button">Chat Now</button>
+          </Link> 
           </form>
         </div>
       </div>

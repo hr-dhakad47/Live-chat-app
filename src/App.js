@@ -3,6 +3,7 @@ import NavBar from "./Pages/NavBar";
 import SignUpPage from "./Pages/SignUpPage";
 import LoginPage from "./Pages/LoginPage";
 import WelcomePage from "./Pages/WelcomePage";
+import ChatPage from "./Pages/ChatPage";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
          <Route path="/" element={<WelcomePage/>}/>
          <Route path="/SignUpPage" element={<SignUpPage/>}/>
          <Route path="/LoginPage" element={<LoginPage/>}/>
+         <Route path="/ChatPage" element={<ChatPage/>}/>
         </Route>
       </Routes>
     </BrowserRouter>
