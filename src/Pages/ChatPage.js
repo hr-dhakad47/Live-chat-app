@@ -4,9 +4,12 @@ import axios from "axios";
 
 function ChatPage() {
   const [msg, setMsg] = useState([]);
+  const [message, setmessage] = useState('');
+  
+
   useEffect(() => {
     axios
-      .get("http://localhost:4000/getMessage")
+      .get("http://localhost:4000/message/getMessage")
       .then((res) => {
         console.log(res.data);
         setMsg(res.data.message);
@@ -16,12 +19,20 @@ function ChatPage() {
       });
   }, []);
 
+  const handleSendMessage = async () => {
+    try {
+      await axios.post("http://localhost:4000/message/addMessage", { userName : "Admin", userEmail : "admin000@gmail.com", message});
+    } catch (error) {
+      console.error('Message sending failed:', error);
+    }
+  };
+
   return (
     <>
       <div className="container-fluid">
         <nav className="navbar bg-body-tertiary">
           <div className="container-fluid d-flex justify-content-between align-items-center">
-            <a className="navbar-brand" href="#">
+            <a className="navbar-brand" href="/">
               <div className="mx-auto col">
                 <img
                   src="https://cdn.pixabay.com/photo/2016/04/01/10/11/avatar-1299805_1280.png"
@@ -58,6 +69,14 @@ function ChatPage() {
           </>
         );
       })}
+
+
+      <div className="input-group fixed-bottom mb-3">
+          <input type="text" value={message} onChange={(e) => setmessage(e.target.value)} className="form-control floatingInput"  placeholder="message"/>
+                <button onClick={handleSendMessage} className="btn btn-primary" type="submit">
+          Send
+        </button>
+      </div>
     </>
   );
 }
