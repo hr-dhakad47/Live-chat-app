@@ -20,7 +20,8 @@ function LoginPage() {
    const Pass = function togglePasswordVisibility() {
         var passwordInput = document.getElementById("password");
         var toggleBtn = document.getElementById("toggleBtn");
-
+   
+        
         if (passwordInput.type === "password") {
             passwordInput.type = "text";
             toggleBtn.textContent = "Hide";
