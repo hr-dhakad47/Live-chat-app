@@ -12,7 +12,7 @@ function SignUpPage() {
 
   const handleSignIn = async () => {
     try {
-      await axios.post('http://localhost:4000/addUser', { fullName, mobileNumber, email, password });
+      await axios.post('https://chat-app-backend-lac.vercel.app/addUser', { fullName, mobileNumber, email, password });
       console.log('Registration successful');
       window.location.href = `/LoginPage`;
     } catch (error) {
