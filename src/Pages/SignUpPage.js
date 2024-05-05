@@ -14,6 +14,7 @@ function SignUpPage() {
     try {
       await axios.post('http://localhost:4000/addUser', { fullName, mobileNumber, email, password });
       console.log('Registration successful');
+      alert("Sign Up complete ... login with your email and password");
     } catch (error) {
       console.error('Error registering user:', error.message);
     }

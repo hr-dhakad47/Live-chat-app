@@ -15,9 +15,7 @@ function NavBar() {
             <Link to="/LoginPage">
                <button className="btn ms-2 me-2 btn-outline-success" type="button">Login</button>
             </Link> 
-            <Link to="/ChatPage">
-            <button className="btn ms-2 btn-outline-success" type="button">Chat Now</button>
-          </Link> 
+            
           </form>
         </div>
       </div>

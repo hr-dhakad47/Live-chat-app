@@ -5,6 +5,7 @@ import axios from "axios";
 function ChatPage() {
   const [msg, setMsg] = useState([]);
   const [message, setmessage] = useState('');
+  const [userInfo, setUserInfo] = useState({});
   
 
   useEffect(() => {
@@ -19,9 +20,19 @@ function ChatPage() {
       });
   }, []);
 
+  useEffect(() => {
+    const userInfoString = sessionStorage.getItem('userInfo');
+    if (userInfoString) {
+      const userInfoFromStorage = JSON.parse(userInfoString);
+      setUserInfo(userInfoFromStorage);
+    }
+  }, []);
+
+
   const handleSendMessage = async () => {
     try {
-      await axios.post("http://localhost:4000/message/addMessage", { userName : "Admin", userEmail : "admin000@gmail.com", message});
+      await axios.post("http://localhost:4000/message/addMessage", { userName : userInfo.name, userEmail : userInfo.email, message});
+      console.log("massage added succefullly", message)
     } catch (error) {
       console.error('Message sending failed:', error);
     }
