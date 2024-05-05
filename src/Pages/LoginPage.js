@@ -17,7 +17,7 @@ function LoginPage() {
         }
         sessionStorage.setItem('userInfo', JSON.stringify(userInfo));
         // localStorage.setItem('name', user.fullName);
-        window.location.href = `/chatpage/${user._id}`;
+        window.location.href = `/ChatPage/${user._id}`;
       } else {
         console.error('Error: ', mssg);
       }
