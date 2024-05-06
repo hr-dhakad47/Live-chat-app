@@ -17,6 +17,7 @@ function SignUpPage() {
       window.location.href = `/LoginPage`;
     } catch (error) {
       console.error('Error registering user:', error.message);
+      alert("Error registering user :  please recheck your information and TRY AGAIN..!!");
     }
   };
 

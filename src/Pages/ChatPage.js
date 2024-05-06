@@ -58,7 +58,8 @@ function ChatPage() {
       <div className="container-fluid fixed-top z-1">
         <nav className="navbar bg-body-tertiary">
           <div className="container-fluid d-flex justify-content-between align-items-center">
-            <div className="mx-auto col">
+            <div className="mx-auto col" >
+              <a className="navbar-brand" href="/"> 
               <img
                 src="https://cdn.pixabay.com/photo/2016/04/01/10/11/avatar-1299805_1280.png"
                 alt="Logo"
@@ -66,11 +67,12 @@ function ChatPage() {
                 height="30"
                 className="d-inline-block align-text-top"
               />
+              </a>
             </div>
             <div className="mx-auto col text-center fs-3">
               <b>Live Chat</b>
             </div>
-            <div className="mx-auto col text-end fs-3">&hearts;</div>
+            <div className="mx-auto col text-end fs-3" >&hearts;</div>
           </div>
         </nav>
       </div>

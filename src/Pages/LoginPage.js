@@ -23,6 +23,7 @@ function LoginPage() {
       }
     } catch (error) {
       console.error('Error Login user:', error.message);
+      alert("your E-mail or PassWord is wrong.. Please TRY AGAIN...!!")
     }
   };
 
