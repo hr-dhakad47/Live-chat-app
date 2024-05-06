@@ -20,7 +20,7 @@ function NavBar() {
         </div>
       </div>
     </nav>
-    <Link to="/"></Link>
+    
     <Outlet/>
     </>
   )
