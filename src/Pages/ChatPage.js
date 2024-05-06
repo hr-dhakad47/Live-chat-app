@@ -29,6 +29,18 @@ function ChatPage() {
     }
   }, [refresh]);
 
+  
+    useEffect(() => {
+      const userData = sessionStorage.getItem("userInfo");
+  
+      if (!userData) {
+        alert("You are not logged in. Please login again.");
+        window.location.href = "/";
+      }
+    }, []);
+  
+    
+
   useEffect(() => {
     if (messagesEndRef.current) {
       messagesEndRef.current.scrollIntoView({ behavior: "smooth" });
