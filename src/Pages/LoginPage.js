@@ -1,12 +1,15 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import './Loader.css';
 
 function LoginPage() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [loading, setLoading] = useState(false);
 
   const handleLogin = async () => {
     try {
+      setLoading(true);
       const response = await axios.post('https://chat-app-backend-lac.vercel.app/login', { email, password });
       const { status, mssg, user } = response.data;
       
@@ -25,6 +28,9 @@ function LoginPage() {
       console.error('Error Login user:', error.message);
       alert("your E-mail or PassWord is wrong.. Please TRY AGAIN...!!")
     }
+    finally {
+      setLoading(false); // Hide loader
+    }
   };
 
   const togglePasswordVisibility = () => {
@@ -41,6 +47,15 @@ function LoginPage() {
   }
 
   return (
+    <>
+     {loading && <div className='z-2 blur'>
+      <div className='position-absolute top-50 start-50 z-3 translate-middle'>
+      <div class="newtons-cradle">
+<div class="newtons-cradle__dot"></div>
+<div class="newtons-cradle__dot"></div>
+<div class="newtons-cradle__dot"></div>
+<div class="newtons-cradle__dot"></div>
+</div> </div> </div>}
     <div className="card position-absolute top-50 start-50 translate-middle" style={{ width: "25rem" }}>
       <div className="card-body ">
         <h1 className="text-center">Login</h1>
@@ -58,6 +73,7 @@ function LoginPage() {
 
       <input onClick={handleLogin} className="btn btn-primary" type="submit" value="Submit" />
     </div>
+    </>
   );
 }
 
