@@ -15,7 +15,7 @@ export const  AnimatedTooltip = () => {
         id: 2,
         name: "Hariom Dhakad",
         designation: "Web developer",
-        image: "https://random-404error.github.io/Random/hariom_dhakad_profile.jpeg",
+        image: "https://rk-4u.github.io/Random/hariom_dhakad_profile.jpeg",
         visit : "https://portfolio-tau-eight-14.vercel.app/",
     }
   ];
