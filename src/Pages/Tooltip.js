@@ -10,13 +10,6 @@ export const  AnimatedTooltip = () => {
       designation: "Web developer",
       image: "https://github.com/RandomFirstOrg/Photos/blob/main/Cipher-modified.png?raw=true",
       visit : "https://portfolio-rahul-phi.vercel.app/",
-    },
-    {
-        id: 2,
-        name: "Hariom Dhakad",
-        designation: "Web developer",
-        image: "https://rk-4u.github.io/Random/hariom_dhakad_profile.jpeg",
-        visit : "https://portfolio-tau-eight-14.vercel.app/",
     }
   ];
   const springConfig = { stiffness: 100, damping: 5 };
