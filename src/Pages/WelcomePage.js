@@ -34,9 +34,9 @@ function WelcomePage() {
           <Outlet />
         </div>
       </div>
-      <div className="position-absolute mb-3 bottom-0 start-50 translate-middle-x">
+      {/* <div className="position-absolute mb-3 bottom-0 start-50 translate-middle-x">
         <AnimatedTooltip />
-      </div>
+      </div> */}
     </div>
   );
 }
