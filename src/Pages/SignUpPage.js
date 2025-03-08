@@ -12,7 +12,7 @@ function SignUpPage() {
 
   const handleSignIn = async () => {
     try {
-      await axios.post('https://chat-app-backend-lac.vercel.app/addUser', { fullName, mobileNumber, email, password });
+      await axios.post('http://localhost:4000/addUser', { fullName, mobileNumber, email, password });
       console.log('Registration successful');
       window.location.href = `/LoginPage`;
     } catch (error) {
@@ -40,7 +40,7 @@ function SignUpPage() {
         <div className="card-body ">
             <h1 className="text-center">Sign Up</h1>
             <div className="form-floating mb-3">
-                <input type="text" value={fullName} onChange={(e) => setfullName(e.target.value)} className="form-control floatingInput"  placeholder="Rahul Choudhary"/>
+                <input type="text" value={fullName} onChange={(e) => setfullName(e.target.value)} className="form-control floatingInput"  placeholder="Hariom Dhakad"/>
                 <label>Full Name</label>
               </div>
               <div className="form-floating mb-3">

@@ -113,7 +113,7 @@ function ChatPage() {
           onChange={(e) => setMessage(e.target.value)}
           className="form-control"
           placeholder="message"
-          onKeyPress={handleKeyPress} // Attach keypress event listener
+          onKeyPress={handleKeyPress} 
         />
         <button onClick={handleSendMessage} className="btn btn-primary" type="submit">
           Send

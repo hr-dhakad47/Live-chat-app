@@ -10,7 +10,7 @@ function LoginPage() {
   const handleLogin = async () => {
     try {
       setLoading(true);
-      const response = await axios.post('https://chat-app-backend-lac.vercel.app/login', { email, password });
+      const response = await axios.post('http://localhost:4000/login', { email, password });
       const { status, mssg, user } = response.data;
       
       if (status === 200) {
