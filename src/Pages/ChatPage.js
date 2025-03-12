@@ -11,7 +11,7 @@ function ChatPage() {
 
   useEffect(() => {
     axios
-      .get("https://chat-app-backend-lac.vercel.app/message/getMessage")
+      .get("https://chat-app-backend-two-kappa.vercel.app/message/getMessage")
       .then((res) => {
         console.log(res.data);
         setMsg(res.data.message);
@@ -49,7 +49,7 @@ function ChatPage() {
 
   const handleSendMessage = async () => {
     try {
-      await axios.post("https://chat-app-backend-lac.vercel.app/message/addMessage", { userName : userInfo.name, userEmail : userInfo.email, message});
+      await axios.post("https://chat-app-backend-two-kappa.vercel.app/message/addMessage", { userName : userInfo.name, userEmail : userInfo.email, message});
       setRefresh(!refresh);
       setMessage("");
       console.log("Message added successfully", message);

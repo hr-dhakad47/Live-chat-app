@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, Outlet } from "react-router-dom";
-import { AnimatedTooltip } from "./Tooltip";
+// import { AnimatedTooltip } from "./Tooltip";
 
 function WelcomePage() {
   return (
